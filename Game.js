@@ -1,8 +1,8 @@
 width = 800;
 height = 800;
 
-playerW= 20;
-playerH=playerW;
+playerW = 20;
+playerH = playerW;
 
 playerX = width / 2;
 playerY = height / 2;
@@ -13,8 +13,11 @@ VY = 0;
 appleX = 0;
 appleY = 0;
 
-appleW= 20;
-appleH=appleW;
+appleW = 20;
+appleH = appleW;
+
+tail = [];
+len = 3;
 
 function startGame() {
     canvas = document.getElementById('Game_Canvas_ID');
@@ -24,6 +27,14 @@ function startGame() {
     document.addEventListener("keydown", keyPush);
     setInterval(game, 1000 / 10);
     newApplePos();
+    newTail();
+}
+
+function newTail() {
+    tail = [];
+    for (var i = 0; i < len; i++) {
+        tail.push({ x: playerX, y: playerY });
+    }
 }
 
 function newApplePos() {
@@ -54,29 +65,42 @@ function keyPush(evt) {
 
 function game() {
     playerX += VX * playerW;
-    if(playerX >= width)
+    if (playerX >= width)
         playerX = 0;
-    if(playerX < 0)
+    if (playerX < 0)
         playerX = width - playerW;
-    
+
     playerY += VY * playerH;
-    if(playerY >= height)
+    if (playerY >= height)
         playerY = 0;
-    if(playerY < 0)
+    if (playerY < 0)
         playerY = height - playerH;
 
-    if(playerX == appleX && playerY == appleY) {
+    if (playerX == appleX && playerY == appleY) {
         newApplePos();
+        tail.push({ x: playerX, y: playerY });
+        len++;
     }
-    
+
     ctx.fillStyle = "gray";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     ctx.fillStyle = "white";
-    ctx.fillRect(playerX,playerY,playerW,playerH);
-
-    document.getElementById('idd').textContent = appleX + " - " + appleY; 
+    for (var i = 0; i < len; i++) {
+        ctx.fillRect(tail[i].x, tail[i].y, playerW, playerH);
+    }
+    for (var i = len - 2; i >= 0; i--) {
+        tail[i + 1] = tail[i];
+    }
+    for (var i = 1; i < len; i++) {
+        if (tail[i].x == playerX && tail[i].y == playerY) {
+            len = 3;
+            newTail();
+            break;
+        }
+    }
+    tail[0] = { x: playerX, y: playerY };
 
     ctx.fillStyle = "red";
-    ctx.fillRect(appleX,appleY,appleW,appleH);
+    ctx.fillRect(appleX, appleY, appleW, appleH);
 }

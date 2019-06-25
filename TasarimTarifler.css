@@ -1,9 +1,26 @@
 
-    body
-    {
-        background-color: rgb(153,230,242);
-    }
-    .tableA
-    {
-        background-color: rgb(164, 255, 125);
-    }
+body
+{
+    background-color: rgb(153,230,242);
+}
+.tableA
+{
+    background-color: rgb(164, 255, 125);
+}
+.Tarif {
+	height: 700px;
+	width: 715px;
+	background-color: rgb(159, 230, 142);
+	border-width: 5px;
+	border-style: double;
+	border-color: rebeccapurple;
+	padding: 35px;
+}
+.Images_Div {
+	width: 710px;
+	height: 350px;
+}
+	.Images_Div .Image {
+		width: 350px;
+		height: 350px;
+	}

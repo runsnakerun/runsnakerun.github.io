@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	</style>
+		<script src="http://Program.js"></script>
+</head>
+
+<body>
+	<link rel="stylesheet" type="text/css" href="tasarim.css">
+
+	<div class="Login">
+		<h1 class="title">
+			<strong>Reyhan'ýn Sitesi</strong>
+		</h1>
+		<p>
+			Bu site <strong>kodlama öðrenen</strong> birinin 
+			öðrendiklerini uygulamasý için açýlmýþtýr.
+		</p>
+	</div>
+	<div class="Tarif">
+		<h1> <strong>Osmanlý Gül Þerbeti</strong> </h1>
+		<p> <strong>Çok az malzeme ile yapabileceðiniz
+				Osmanlý Gül Þerbeti tarifini öðrenmek için okumaya devam edin.</strong>
+		</p>
+		<p> <strong>Malzemeler</strong> </p>
+		<ul>
+			<strong>
+				<li>
+					4 yemek kaþýðý gül reçeli
+				</li>
+				<li>
+					1 su bardaðý su
+				</li>
+			</strong>
+		</ul>
+		<p> <strong>Yapýlýþý</strong> </p>
+		<ol>
+			<strong>
+				<li>
+					Suya reçel eklenir ve reçel eriyene kadar karýþtýrýlýr.
+				</li>
+				<li>
+					Buzdolabýnda soðutulmuþ þekilde servis edilir.
+				</li>
+			</strong>
+		</ol>
+		<h2> <strong>Afiyet Olsun</strong> </h2>
+
+		<div class="Images_Div">
+
+			<img class="Image" src="20190527_223234.jpg" alt="Resimde dolu bardak bulunmaktadýr.">
+			<img class="Image" src="20190522_133708.jpg" alt="Resimde 3 tane gül bulunmaktadýr.">
+		</div>
+	</div>
+
+	<div>
+			<a href="Game.html" class="button">Go to TheSnakeGame</a>
+	</div>
+</body>
+
+</html>
